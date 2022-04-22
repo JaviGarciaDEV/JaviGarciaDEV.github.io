@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>FECHA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" type="text/css" href="estilo.css"/>
+    </head>
+    <body>
+        <div id="reloj">
+            <script type="text/javascript">
+                function startTime() {
+                    today = new Date();
+                    h = today.getHours();
+                    m = today.getMinutes();
+                    s = today.getSeconds();
+                    m = checkTime(m);
+                    s = checkTime(s);
+                    document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
+                    t = setTimeout('startTime()', 500);
+                }
+                function checkTime(i)
+                {
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+                window.onload = function () {
+                    startTime();
+                };
+            </script>
+        </div>
+        <img id="mario" src="mario.gif" alt="mariobros">
+        <img id="coin" src="coin.gif" alt="coinmario"> 
+        <img id="wallpaper" src="wallpaper.jpg" alt="wallpaper">
+    </body>
+</html>
